@@ -1,6 +1,6 @@
-import ProductItem from "./ProductItem"
-import classes from './Products.module.css'
 import PRODUCT_LIST from '../../data/PRODUCT_LIST'
+import classes from './Products.module.css'
+import ProductItem from "./ProductItem"
 
 
 
@@ -14,7 +14,9 @@ const Products = () => {
 
 	return (
 		<section>
-			<div className={classes.container}>{productList}</div>
+			<div className={classes.container}>
+				{productList}
+				</div>
 		</section>
 	)
 }
