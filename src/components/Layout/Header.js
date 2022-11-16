@@ -6,7 +6,7 @@ const Header = props => {
 		<Fragment>
 			<header className={classes.header}>
 				<h1>Electro-Shop</h1>
-				<HeaderCartButton/>
+				<HeaderCartButton showCartHandler={props.showCartHandler}/>
 			</header>
 		</Fragment>
 	)
