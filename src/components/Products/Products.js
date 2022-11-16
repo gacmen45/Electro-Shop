@@ -9,7 +9,7 @@ import ProductItem from "./ProductItem"
 
 const Products = () => {
 	const productList = PRODUCT_LIST.map(product => 
-		 <ProductItem product={product} key={product.id}/>
+		 <ProductItem product={product} key={product.id} id={product.id}/>
 	)
 
 	return (
