@@ -1,7 +1,9 @@
+import classes from './HeaderCartButton.module.css'
 const HeaderCartButton = () => {
 	return (
-		<button>
+		<button className={classes.button}>
 			<span>Cart</span>
+			
 			<span>7</span>
 		</button>
 	)
