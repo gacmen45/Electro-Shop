@@ -2,9 +2,21 @@ import { useContext } from 'react'
 import classes from './HeaderCartButton.module.css'
 import CartContext from '../../store/cart-context'
 
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 
 const HeaderCartButton = (props) => {
+
+let navigate= useNavigate()
+const routeChange = () => {
+	let path = 'cart'
+	navigate(path)
+}
+
+
 const cartCtx = useContext(CartContext)
 
 const numberOfCartItems = cartCtx.items.reduce((curNumber,item) => {
@@ -12,7 +24,7 @@ const numberOfCartItems = cartCtx.items.reduce((curNumber,item) => {
 },0)
 
 	return (
-		<button className={classes.button} onClick={props.showCartHandler}>
+		<button className={classes.button} onClick={routeChange}>
 			<span>Cart</span>
 			
 			<span>{numberOfCartItems}</span>

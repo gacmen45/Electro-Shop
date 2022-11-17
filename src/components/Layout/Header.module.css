@@ -5,3 +5,6 @@
     background-color: grey;
 
 }
+.header h1{
+    cursor:pointer
+}

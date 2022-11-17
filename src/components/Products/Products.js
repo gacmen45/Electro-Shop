@@ -2,7 +2,7 @@ import PRODUCT_LIST from '../../data/PRODUCT_LIST'
 import classes from './Products.module.css'
 import ProductItem from "./ProductItem"
 
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -14,6 +14,7 @@ const Products = () => {
 
 	return (
 		<section>
+			
 			<div className={classes.container}>
 				{productList}
 				</div>
