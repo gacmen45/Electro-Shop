@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import classes from './Cart.module.css'
-import Modal from '../UI/Modal'
 import CartContext from '../../store/cart-context'
 import CartItem from './CartItem'
 

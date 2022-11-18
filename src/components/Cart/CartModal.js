@@ -13,7 +13,6 @@ const CartModal = props => {
 
 	const lastItem = cartCtx.items.slice(-1)
 
-	//TEST
 	const cartItemAddHandler = item => {
 		cartCtx.addItem({ ...item, amount: 1 })
 	}
