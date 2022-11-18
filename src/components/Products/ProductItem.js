@@ -21,11 +21,13 @@ const addToCartHandler = amount => {
 
     })
 }
-return <div className={classes.product}>
+
+
+
+return <div className={classes.product} >
     <Link to={`${props.product.id}`}><h2>{props.product.name}</h2></Link>
     <p>{props.product.category}</p>
     <p>{props.product.price}</p>
-    <button onClick={props.showCartModalHandler}>KUP</button>
     <ProductItemActions onAddToCart={addToCartHandler} showCartModalHandler={props.showCartModalHandler}/>
 </div>
 }

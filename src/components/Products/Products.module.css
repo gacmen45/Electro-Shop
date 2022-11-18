@@ -6,3 +6,13 @@
     margin: 1em;
     padding: 1em;
 }
+
+.product {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	border: 1px solid black;
+    padding: 1em;
+    margin: 2em;
+}

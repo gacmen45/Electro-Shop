@@ -11,21 +11,27 @@ import CartModalForm from './CartModalForm'
 const CartModal = props => {
 	const cartCtx = useContext(CartContext)
 
+
+
 	const lastItem = cartCtx.items.slice(-1)
+
+
 
 	const cartItemAddHandler = item => {
 		cartCtx.addItem({ ...item, amount: 1 })
+		
 	}
 
 	const cartItemRemoveHandler = id => {
-		const lastItemAmount = lastItem.map(item => item.amount)
-		const lastItemAmountNumber = +lastItemAmount
-		if (lastItemAmountNumber === 1) {
+		if(cartCtx.currentItem.amount === 1){
 			return
+		}else{
+			cartCtx.removeItem(id)
 		}
-		cartCtx.removeItem(id)
-	}
 
+		
+
+	}
 
 	return (
 		<Modal hideCartModalHandler={props.hideCartModalHandler}>
@@ -34,7 +40,8 @@ const CartModal = props => {
 
 				<p>ADD PRODUCT TO CART</p>
 				<div>
-					{lastItem.map(item => (
+					{/* {lastItem.map(item => (
+					
 						<div>
 							{item.name}
 							<br />
@@ -49,7 +56,17 @@ const CartModal = props => {
 								hideCartModalHandler={props.hideCartModalHandler}
 							/>
 						</div>
-					))}
+					))} */}
+					<div>
+						<p>{cartCtx.currentItem.name}</p>
+						<p>{cartCtx.currentItem.price}</p>
+						<p>{cartCtx.currentItem.amount}</p>
+						<CartModalForm
+								onRemove={cartItemRemoveHandler.bind(null, cartCtx.currentItem.id)}
+								onAdd={cartItemAddHandler.bind(null, cartCtx.currentItem)}
+								hideCartModalHandler={props.hideCartModalHandler}
+							/>
+					</div>
 				</div>
 
 				{/* <CartModalForm/> */}

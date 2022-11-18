@@ -18,6 +18,9 @@ const ProductItemActions = (props) => {
 		props.showCartModalHandler()
 	}
 
+	
+	
+
 	return (<div>
 	 		<button onClick={onClick}>+ Add</button>
 	  </div>

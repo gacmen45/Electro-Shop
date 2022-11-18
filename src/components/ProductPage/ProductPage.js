@@ -27,7 +27,6 @@ const ProductPage = (props) => {
         <h2>{product.name}</h2>
         <p>{product.category}</p>
         <p>{product.price}</p>
-        <button onClick={props.showCartModalHandler}>ADD TO CART</button>
         <ProductItemActions onAddToCart={addToCartHandler} showCartModalHandler={props.showCartModalHandler}/>
 
     </div>

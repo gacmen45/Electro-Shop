@@ -4,6 +4,7 @@ import CartContext from './cart-context'
 const defaultCartState = {
 	items: [],
 	totalAmount: 0,
+	current:{}
 }
 
 const cartReducer = (state, action) => {
@@ -13,18 +14,23 @@ const cartReducer = (state, action) => {
 		const existingCartItemIndex = state.items.findIndex(item => item.id === action.item.id)
 		const existingCartItem = state.items[existingCartItemIndex]
 		let updatedItems
+		let currentItem
 
 		if (existingCartItem) {
 			const updatedItem = { ...existingCartItem, amount: existingCartItem.amount + action.item.amount }
 			updatedItems = [...state.items]
 			updatedItems[existingCartItemIndex] = updatedItem
-		} else {
+			currentItem = updatedItem
+			console.log(currentItem)
+		}else {
 			updatedItems = state.items.concat(action.item)
+			currentItem = action.item
 		}
-
 		return {
 			items: updatedItems,
 			totalAmount: updatedTotalAmount,
+			currentItem:currentItem
+			
 		}
 	}
 	if (action.type === 'REMOVE') {
@@ -32,30 +38,27 @@ const cartReducer = (state, action) => {
 		const existingItem = state.items[existingCartItemIndex]
 		const updatedTotalAmount = state.totalAmount - existingItem.price
 		let updatedItems
+		let currentItem
 		if (existingItem.amount === 1) {
 			updatedItems = state.items.filter(item => item.id !== action.id)
 		} else {
       const updatedItem = {...existingItem,amount:existingItem.amount -1}
       updatedItems = [...state.items]
       updatedItems[existingCartItemIndex] = updatedItem
+	  currentItem=updatedItem
 		}
 
     return {
       items:updatedItems,
-      totalAmount:updatedTotalAmount
+      totalAmount:updatedTotalAmount,
+	  currentItem:currentItem
     }
 	}
-	// if(action.type === 'DELETE'){
-	// 	const existingCartItemIndex = state.items.findIndex(item => item.id === action.id)
-	// 	console.log(existingCartItemIndex);
-	// }
+	
 	
 	
 
-
-	
-
-	return defaultCartState
+return defaultCartState
 }
 
 const CartProvider = props => {
@@ -68,9 +71,7 @@ const CartProvider = props => {
 	const removeItemFromCartHandler = id => {
 		dispatchCartAction({ type: 'REMOVE', id: id })
 	}
-	// const deleteItemFromCartHandler = id => {
-	// 	dispatchCartAction({ type: 'DELETE', id: id })
-	// }
+
 
 
 	const cartContext = {
@@ -78,7 +79,7 @@ const CartProvider = props => {
 		totalAmount: cartState.totalAmount,
 		addItem: addItemToCartHandler,
 		removeItem: removeItemFromCartHandler,
-		// deleteItem:deleteItemFromCartHandler,
+		currentItem:cartState.currentItem
 	}
 
 	return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>

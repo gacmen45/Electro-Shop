@@ -24,14 +24,19 @@ const hideCartModalHandler = () => {
   setCartModalIsShown(false)
 }
 
+//TEST
+const [name,setName ] = useState()
 
+const dalejdalej = (x) => {
+setName(x)
+console.log("APP", name);}
 
   return (
   <CartProvider>
     <Header />
 {cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler}/>}
     <Routes>
-      <Route path='/' element={ <Products showCartModalHandler={showCartModalHandler}/>}></Route>
+      <Route path='/' element={ <Products showCartModalHandler={showCartModalHandler}/> }></Route>
       <Route path=':id' element={<ProductPage  showCartModalHandler={showCartModalHandler}/>}></Route>
       <Route path='cart' element={ <Cart/>}></Route>
     </Routes>
