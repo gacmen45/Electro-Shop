@@ -6,24 +6,31 @@ import Header from './components/Layout/Header';
 import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart';
 import CartProvider from './store/CartProvider';
+import CartModal from './components/Cart/CartModal';
 
 
 
 function App() {
-const [cartIsShown,setCartIsShown] = useState(false)
 
-const showCartHandler = () => {
-  setCartIsShown(true)
+
+
+//CART MODAl
+const [cartModalIsShown,setCartModalIsShown] = useState(false) 
+const showCartModalHandler = () => {
+  setCartModalIsShown(true)
 }
-const hideCartHandler= () => {
-  setCartIsShown(false)
+const hideCartModalHandler = () => {
+  setCartModalIsShown(false)
 }
+
+
 
   return (
   <CartProvider>
-    <Header showCartHandler={showCartHandler}/>
+    <Header />
+{cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler}/>}
     <Routes>
-      <Route path='/' element={ <Products/>}></Route>
+      <Route path='/' element={ <Products showCartModalHandler={showCartModalHandler}/>}></Route>
       <Route path='cart' element={ <Cart/>}></Route>
     </Routes>
   </CartProvider>)

@@ -20,6 +20,7 @@ return <div className={classes.product}>
     <h2>{props.product.name}</h2>
     <p>{props.product.category}</p>
     <p>{props.product.price}</p>
+    <button onClick={props.showCartModalHandler}>KUP</button>
     <ProductItemActions onAddToCart={addToCartHandler}/>
 </div>
 }

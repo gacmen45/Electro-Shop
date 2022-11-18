@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom'
 
 
 
-const Products = () => {
+const Products = (props) => {
 	const productList = PRODUCT_LIST.map(product => 
-		 <ProductItem product={product} key={product.id} id={product.id}/>
+		 <ProductItem product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler}/>
 	)
 
 	return (
