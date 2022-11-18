@@ -1,47 +1,26 @@
-import { useRef, useState } from 'react'
 import classes from './ProductItemActions.module.css'
-import Input from '../UI/Input'
 
 const ProductItemActions = (props) => {
-  const [amountIsValid, setAmountIsValid] = useState(true);
-	const amountInputRef = useRef();
-  
+   
+
+
 	const submitHandler = (event) => {
 	  event.preventDefault();
   
-	  const enteredAmount = amountInputRef.current.value;
-	  const enteredAmountNumber = +enteredAmount;
+	  const enteredAmount = 1;
   
-	  if (
-		enteredAmount.trim().length === 0 ||
-		enteredAmountNumber < 1 ||
-		enteredAmountNumber > 5
-	  ) {
-		setAmountIsValid(false);
-		console.log('false');
-		return;
-	  }
   
-	  props.onAddToCart(enteredAmountNumber);
+	  props.onAddToCart(enteredAmount);
 	};
-  
-	return (
-	  <form  onSubmit={submitHandler}>
-		<Input
-		  ref={amountInputRef}
-		  label='Amount'
-		  input={{
-			id: 'amount_' + props.id,
-			type: 'number',
-			min: '1',
-			max: '5',
-			step: '1',
-			defaultValue: '1',
-		  }}
-		/>
-		<button>+ Add</button>
-		{!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
-	  </form>
+
+	const onClick = e => {
+		submitHandler(e)
+		props.showCartModalHandler()
+	}
+
+	return (<div>
+	 		<button onClick={onClick}>+ Add</button>
+	  </div>
 	);
 }
 

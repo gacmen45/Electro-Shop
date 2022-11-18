@@ -45,6 +45,15 @@ const cartReducer = (state, action) => {
       totalAmount:updatedTotalAmount
     }
 	}
+	// if(action.type === 'DELETE'){
+	// 	const existingCartItemIndex = state.items.findIndex(item => item.id === action.id)
+	// 	console.log(existingCartItemIndex);
+	// }
+	
+	
+
+
+	
 
 	return defaultCartState
 }
@@ -59,12 +68,17 @@ const CartProvider = props => {
 	const removeItemFromCartHandler = id => {
 		dispatchCartAction({ type: 'REMOVE', id: id })
 	}
+	// const deleteItemFromCartHandler = id => {
+	// 	dispatchCartAction({ type: 'DELETE', id: id })
+	// }
+
 
 	const cartContext = {
 		items: cartState.items,
 		totalAmount: cartState.totalAmount,
 		addItem: addItemToCartHandler,
 		removeItem: removeItemFromCartHandler,
+		// deleteItem:deleteItemFromCartHandler,
 	}
 
 	return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>

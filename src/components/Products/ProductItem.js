@@ -2,8 +2,15 @@ import { useContext } from 'react'
 import classes from './ProductItem.module.css'
 import ProductItemActions from './ProductItemActions'
 import CartContext from '../../store/cart-context'
+import { Link } from 'react-router-dom'
+
+import CartModal from '../Cart/CartModal'
 
 const ProductItem = props => {
+
+
+
+
 const cartCtx =useContext(CartContext) 
 const addToCartHandler = amount => {
     cartCtx.addItem({
@@ -14,14 +21,12 @@ const addToCartHandler = amount => {
 
     })
 }
-
-
 return <div className={classes.product}>
-    <h2>{props.product.name}</h2>
+    <Link to={`${props.product.id}`}><h2>{props.product.name}</h2></Link>
     <p>{props.product.category}</p>
     <p>{props.product.price}</p>
     <button onClick={props.showCartModalHandler}>KUP</button>
-    <ProductItemActions onAddToCart={addToCartHandler}/>
+    <ProductItemActions onAddToCart={addToCartHandler} showCartModalHandler={props.showCartModalHandler}/>
 </div>
 }
 
