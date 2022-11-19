@@ -33,6 +33,8 @@ const Cart = props => {
 	return (
 		// <Modal hideCartHandler={props.hideCartHandler}>
         <div>
+
+			{!hasItems && <p>no products in cart</p>}
 			{cartItems}
 			<div>
 				<span>Total Amount: </span>

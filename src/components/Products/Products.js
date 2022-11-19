@@ -10,13 +10,28 @@ import { Link } from 'react-router-dom'
 
 const Products = (props) => {
 
-	const test = (e) => {
-		console.log(e.target);
+
+	const test =() => {
+		const newCategory = props.changeCategory
+		console.log('InProduct',newCategory)
 	}
 
-	const productList = PRODUCT_LIST.map(product => 
-		 <ProductItem  product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler}/>
-	)
+	const filteredProducts = PRODUCT_LIST.filter(product => {
+		console.log(props.changeCategory)
+		if (props.changeCategory === 'all') {
+			return product
+		}
+
+		return product.category === props.changeCategory
+	})
+
+	console.log(filteredProducts);
+	
+
+	// const productList = PRODUCT_LIST.map(product => 
+	// 	 <ProductItem  product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler} changeCategory={test}/>
+	// )
+	const productListFiltered = filteredProducts.map(product => <ProductItem  product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler} changeCategory={test}/>)
 	
 
 
@@ -25,7 +40,8 @@ const Products = (props) => {
 		<section>
 			
 			<div className={classes.container}>
-				{productList}
+				{/* {productList} */}
+				{productListFiltered}
 				</div>
 		</section>
 	)
