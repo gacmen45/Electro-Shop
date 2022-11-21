@@ -6,8 +6,9 @@ const CartModalForm = props => {
 	return (
 		<div>
 
-			<button onClick={props.onRemove}>−</button>
 			<button onClick={props.onAdd}>+</button>
+			<p>{props.totalAmount}</p>
+			<button onClick={props.onRemove}>−</button>
 
 
 			<button onClick={props.hideCartModalHandler}>DODAJ DO KOSZYKA I WRÓĆ DO STRONY GŁÓWNEJ</button>

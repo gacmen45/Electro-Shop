@@ -13,11 +13,9 @@ const Products = (props) => {
 
 	const test =() => {
 		const newCategory = props.changeCategory
-		console.log('InProduct',newCategory)
 	}
 
 	const filteredProducts = PRODUCT_LIST.filter(product => {
-		console.log(props.changeCategory)
 		if (props.changeCategory === 'all') {
 			return product
 		}
@@ -25,12 +23,9 @@ const Products = (props) => {
 		return product.category === props.changeCategory
 	})
 
-	console.log(filteredProducts);
 	
 
-	// const productList = PRODUCT_LIST.map(product => 
-	// 	 <ProductItem  product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler} changeCategory={test}/>
-	// )
+	
 	const productListFiltered = filteredProducts.map(product => <ProductItem  product={product} key={product.id} id={product.id} showCartModalHandler={props.showCartModalHandler} changeCategory={test}/>)
 	
 
@@ -40,7 +35,6 @@ const Products = (props) => {
 		<section>
 			
 			<div className={classes.container}>
-				{/* {productList} */}
 				{productListFiltered}
 				</div>
 		</section>

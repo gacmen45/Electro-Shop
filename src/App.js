@@ -1,44 +1,40 @@
-import { useState } from 'react';
-import {Routes,Route} from 'react-router-dom'
-import './App.css';
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import './App.css'
 
-import Header from './components/Layout/Header';
-import Products from './components/Products/Products';
-import Cart from './components/Cart/Cart';
-import CartProvider from './store/CartProvider';
-import CartModal from './components/Cart/CartModal';
-import ProductPage from './components/ProductPage/ProductPage';
-
-
+import Navigation from './components/Layout/Navigation/Navigation'
+import Products from './components/Products/Products'
+import Cart from './components/Cart/Cart'
+import CartProvider from './store/CartProvider'
+import CartModal from './components/Cart/CartModal'
+import ProductPage from './components/ProductPage/ProductPage'
 
 function App() {
-  const [category, setCategory] = useState('all')
-console.log('inapp',category)
+	const [category, setCategory] = useState('all')
+	console.log(category)
 
+	//CART MODAl
+	const [cartModalIsShown, setCartModalIsShown] = useState(false)
+	const showCartModalHandler = () => {
+		setCartModalIsShown(true)
+	}
+	const hideCartModalHandler = () => {
+		setCartModalIsShown(false)
+	}
 
-
-//CART MODAl
-const [cartModalIsShown,setCartModalIsShown] = useState(false) 
-const showCartModalHandler = () => {
-  setCartModalIsShown(true)
-}
-const hideCartModalHandler = () => {
-  setCartModalIsShown(false)
-}
-
-
-  return (
-  <CartProvider>
-    <Header test2={setCategory}/>
-{cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler}/>}
-    <Routes>
-      <Route path='/' element={ <Products showCartModalHandler={showCartModalHandler} changeCategory={category}/> }></Route>
-      <Route path=':id' element={<ProductPage  showCartModalHandler={showCartModalHandler}/>}></Route>
-      <Route path='cart' element={ <Cart/>}></Route>
-    </Routes>
-  </CartProvider>)
- 
-  
+	return (
+		<CartProvider>
+			<Navigation test2={setCategory} />
+			{cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler} />}
+			<Routes>
+				<Route
+					path='/'
+					element={<Products showCartModalHandler={showCartModalHandler} changeCategory={category} />}></Route>
+				<Route path=':id' element={<ProductPage showCartModalHandler={showCartModalHandler} />}></Route>
+				<Route path='cart' element={<Cart />}></Route>
+			</Routes>
+		</CartProvider>
+	)
 }
 
-export default App;
+export default App

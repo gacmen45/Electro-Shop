@@ -19,6 +19,8 @@ const CartModal = props => {
 		}
 	}
 
+	const totalPrice = (cartCtx.currentItem.price * cartCtx.currentItem.amount).toFixed(2)
+
 	return (
 		<Modal hideCartModalHandler={props.hideCartModalHandler}>
 			<div className={classes['cart-module']}>
@@ -26,12 +28,13 @@ const CartModal = props => {
 
 				<div>
 					<p>{cartCtx.currentItem.name}</p>
-					<p>{cartCtx.currentItem.price * cartCtx.currentItem.amount}</p>
-					<p>{cartCtx.currentItem.amount}</p>
+					<p>{totalPrice}</p>
+	
 					<CartModalForm
 						onRemove={cartItemRemoveHandler.bind(null, cartCtx.currentItem.id)}
 						onAdd={cartItemAddHandler.bind(null, cartCtx.currentItem)}
 						hideCartModalHandler={props.hideCartModalHandler}
+						totalAmount={cartCtx.currentItem.amount}
 					/>
 				</div>
 			</div>
