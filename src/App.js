@@ -6,7 +6,7 @@ import Navigation from './components/Layout/Navigation/Navigation'
 import Products from './components/Layout/Main/Products'
 import Cart from './components/Cart/Cart'
 import CartProvider from './store/CartProvider'
-import CartModal from './components/Cart/CartModal'
+import CartModal from './components/CartModal/CartModal'
 import ProductPage from './components/ProductPage/ProductPage'
 
 function App() {

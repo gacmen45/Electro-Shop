@@ -10,7 +10,6 @@ import classes from './ProductPage.module.css'
 const ProductPage = (props) => {
     const { id } = useParams()
     const product = PRODUCT_LIST.find(product => product.id === id)
-    console.log(product.name);
 
     const cartCtx =useContext(CartContext) 
     const addToCartHandler = amount => {
@@ -18,7 +17,8 @@ const ProductPage = (props) => {
             id:product.id,
             name:product.name,
             amount:amount,
-            price:product.price
+            price:product.price,
+            photo:product.description
     
         })
     }
