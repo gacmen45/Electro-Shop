@@ -10,7 +10,7 @@ const NavigationItems = props => {
 	}
 
 
-	return (
+	return (<div>
 			<ul className={`${classes.categories}  ${props.mobile ? classes.active : '' }`}>
 
 				{CATEGORY_LIST.map(category => (
@@ -21,6 +21,7 @@ const NavigationItems = props => {
 					</Link>
 				))}
 			</ul>
+			</div>
 	)
 }
 
