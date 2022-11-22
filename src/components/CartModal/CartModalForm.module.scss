@@ -23,19 +23,12 @@
         font-weight: bold;
         cursor: pointer;
         margin: .5em;
-
-        @media (min-width: 576px) {
-            padding: 0.2em;
-            font-size: 1.3rem;
-    
-        }
     }
     &__amount{
         font-size: 1.6rem;
     }
     &__price{
-        font-size: 1.8rem;
-        padding: 1em;
+        font-size: 2rem;
         font-weight: bold;
         text-align: center;
 
@@ -44,12 +37,4 @@
     
         }
     }
-}
-
-.test{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
 }

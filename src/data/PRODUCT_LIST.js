@@ -61,17 +61,7 @@ const PRODUCT_LIST = [
 		producent:'Nintendo',
 		description:'Jest moc',
 	},
-	{
-		id: 'ratchet-ra',
-		name: 'Ratchet & Clank: Rift Apart',
-		category: 'games',
-		platform:'ps5',
-		gallery:['https://image.ceneostatic.pl/data/products/103438097/i-ratchet-clank-rift-apart-gra-ps5.jpg'],
-		price: 199,
-		developer: 'Insomniac',
-		version: 'PL',
-		description:'super gierka',
-	},
+	
 	{
 		id: 'bloodborne',
 		name: 'Bloodborne',

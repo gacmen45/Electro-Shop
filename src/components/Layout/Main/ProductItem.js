@@ -7,6 +7,10 @@ import CartContext from '../../../store/cart-context'
 import ProductCartButton from './ProductCartButton'
 
 const ProductItem = props => {
+
+
+
+
 	const cartCtx = useContext(CartContext)
 	const addToCartHandler = amount => {
 		cartCtx.addItem({
@@ -14,7 +18,7 @@ const ProductItem = props => {
 			name: props.product.name,
 			amount: amount,
 			price: props.product.price,
-			photo:props.product.gallery[0]
+			photo: props.product.gallery[0],
 		})
 	}
 
@@ -26,10 +30,9 @@ const ProductItem = props => {
 				<img className={classes['product__img']} src={props.product.gallery} />
 
 				<p className={classes['product__text']}>
-					{' '}
-					{props.product.producent}
-					{props.product.developer}
-				</p>
+					{props.product.producent}{props.product.developer}</p>
+				
+
 				<div className={classes['product__price']}>
 					<p className={classes['product__price-txt']}>{props.product.price} zł</p>
 					<div className={classes['product__price-btn']}>

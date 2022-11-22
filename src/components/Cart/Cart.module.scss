@@ -1,0 +1,50 @@
+.cart {
+	margin-top: 10rem;
+    
+    @media(min-width:576px){
+    }
+	h2 {
+        margin-left:1em;
+		font-size: 3rem;
+	}
+
+	&-info {
+		margin-top: 1em;
+		font-size: 3rem;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	&__amount {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+        margin-right: 2em;
+
+		p {
+			margin-top: 1em;
+			font-size: 2rem;
+			text-transform: uppercase;
+		}
+		span {
+			font-weight: bold;
+			font-size: 3rem;
+		}
+	}
+	&-btn {
+		
+		cursor: pointer;
+		margin: 1em;
+		padding: 1em 2em;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		border-radius: 8px;
+		border: 1px solid #dddddd;
+		box-shadow: 3px 3px 3px #dddddd;
+		transition: all 0.5s;
+		&:hover {
+			background-color: #0082fa;
+			color: white;
+		}
+	}
+}
