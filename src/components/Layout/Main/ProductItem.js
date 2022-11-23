@@ -23,11 +23,11 @@ const ProductItem = props => {
 	}
 
 	return (
-		<Link to={`${props.product.id}`}>
-			<div className={classes.product}>
+				<Link to={`${props.product.id}`} style={{ textDecoration: 'none' }}>
+		<div className={classes.product}>
 				<h2 className={classes['product__name']}>{props.product.name}</h2>
 
-				<img className={classes['product__img']} src={props.product.gallery} />
+				<img className={classes['product__img']} src={props.product.gallery[0]} />
 
 				<p className={classes['product__text']}>
 					{props.product.producent}{props.product.developer}</p>
