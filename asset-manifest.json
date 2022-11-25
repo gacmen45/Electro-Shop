@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/electro-shop/static/css/main.0616ddd3.css",
-    "main.js": "/electro-shop/static/js/main.e6d23ac8.js",
-    "static/js/787.c07521e4.chunk.js": "/electro-shop/static/js/787.c07521e4.chunk.js",
-    "index.html": "/electro-shop/index.html",
-    "main.0616ddd3.css.map": "/electro-shop/static/css/main.0616ddd3.css.map",
-    "main.e6d23ac8.js.map": "/electro-shop/static/js/main.e6d23ac8.js.map",
-    "787.c07521e4.chunk.js.map": "/electro-shop/static/js/787.c07521e4.chunk.js.map"
+    "main.css": "/gacmen45.github.io/Electro-Shop/static/css/main.0616ddd3.css",
+    "main.js": "/gacmen45.github.io/Electro-Shop/static/js/main.aeb0ae81.js",
+    "static/js/787.c07521e4.chunk.js": "/gacmen45.github.io/Electro-Shop/static/js/787.c07521e4.chunk.js",
+    "index.html": "/gacmen45.github.io/Electro-Shop/index.html",
+    "main.0616ddd3.css.map": "/gacmen45.github.io/Electro-Shop/static/css/main.0616ddd3.css.map",
+    "main.aeb0ae81.js.map": "/gacmen45.github.io/Electro-Shop/static/js/main.aeb0ae81.js.map",
+    "787.c07521e4.chunk.js.map": "/gacmen45.github.io/Electro-Shop/static/js/787.c07521e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0616ddd3.css",
-    "static/js/main.e6d23ac8.js"
+    "static/js/main.aeb0ae81.js"
   ]
 }
