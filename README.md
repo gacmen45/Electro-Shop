@@ -17,13 +17,20 @@
 
 ## Table of Contents
 * [General info](#general-info)
+* [Install](#install)
 * [Technologies](#technologies)
-* [features](#features)
+* [Features](#features)
 * [Sources](#sources)
 * [Live](#live)
 
 ## General Info
 My independent project showing responsive shop-design. Create in React.
+
+## Install
+If you want check this on your local computer please follow this steps:
+* Clone repo,
+* In the project directory, run: ### `npm i` and ### `npm run`
+
 
 ## Technologies
 Project is created with:
