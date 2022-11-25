@@ -30,7 +30,7 @@ function App() {
 			{cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler} />}
 			<Routes>
 				<Route
-					path='/'
+					path='/firstwebapp'
 					element={<Products showCartModalHandler={showCartModalHandler} changeCategory={category} />}></Route>
 				<Route path=':id' element={<ProductPage showCartModalHandler={showCartModalHandler} />}></Route>
 				<Route path='cart' element={<Cart />}></Route>
