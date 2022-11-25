@@ -29,8 +29,9 @@ My independent project showing responsive shop-design. Create in React.
 ## Install
 If you want check this on your local computer please follow this steps:
 * Clone repo,
-* In the project directory, run: ### `npm i` and ### `npm run`
+* In the project directory, run: `npm i` and  `npm run`
 
+Or If you want only chceck project on website check  [live](#live)
 
 ## Technologies
 Project is created with:
