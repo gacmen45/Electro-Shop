@@ -1,7 +1,7 @@
 {
 	"name": "electro-shop",
 	"version": "0.1.0",
-	"homepage": "http://gacmen45.github.io/Electro-Shop",
+	"homepage": "https://gacmen45.github.io/electro-shop",
 	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.2.1",
