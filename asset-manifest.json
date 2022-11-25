@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Electro-Shop/static/css/main.0616ddd3.css",
+    "main.js": "/Electro-Shop/static/js/main.fb1b58ee.js",
+    "static/js/787.c07521e4.chunk.js": "/Electro-Shop/static/js/787.c07521e4.chunk.js",
+    "index.html": "/Electro-Shop/index.html",
+    "main.0616ddd3.css.map": "/Electro-Shop/static/css/main.0616ddd3.css.map",
+    "main.fb1b58ee.js.map": "/Electro-Shop/static/js/main.fb1b58ee.js.map",
+    "787.c07521e4.chunk.js.map": "/Electro-Shop/static/js/787.c07521e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0616ddd3.css",
+    "static/js/main.fb1b58ee.js"
+  ]
+}
