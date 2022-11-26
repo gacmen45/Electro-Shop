@@ -39,7 +39,7 @@ const Navigation = props => {
 			<nav className={classes.nav}>
 				<div className={classes.test}>
 					<div onClick={routeChange} className={classes['nav__logo']}>
-						<h1>Electro-Shop</h1>
+						<h1>GameShop</h1>
 						{logo}
 					</div>
 

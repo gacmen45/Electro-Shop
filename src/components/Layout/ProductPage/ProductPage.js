@@ -1,11 +1,11 @@
 import { useContext,useState } from 'react'
 
-import PRODUCT_LIST from './../../data/PRODUCT_LIST'
+import PRODUCT_LIST from '../../../data/PRODUCT_LIST'
 import { useParams } from 'react-router-dom'
-import CartContext from '../../store/cart-context'
-import ProductItemActions from '../Layout/Main/ProductCartButton'
+import CartContext from '../../../store/cart-context'
+import ProductItemActions from '../Main/ProductCartButton'
 import classes from './ProductPage.module.scss'
-import Wrapper from './../UI/Wrapper'
+import Wrapper from '../../UI/Wrapper'
 import ProductPageButton from './ProductPageButton'
 
 const ProductPage = props => {
@@ -41,7 +41,10 @@ const changeImg = e => {
 						<img onClick={changeImg} className={classes['product__gallery-item']} src={item} alt='product screens' />
 					))}
 				</div>
+				<div className={classes['product__hero-img-box']}>
+
 				<img className={classes['product__hero-img']} src={img} alt='main-photo' />
+				</div>
 				<div className={classes['product__text']}>
 					<h2 className={classes['product__text-name']}>{product.name}</h2>
 					<p className={classes['product__text-dev']}> {product.developer}</p>

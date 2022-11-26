@@ -1,0 +1,134 @@
+@import '../../../styles/_colors';
+
+.product {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10em;
+	margin-bottom: 5rem;
+	align-items: center;
+	padding: 1em;
+
+	@media (min-width: 992px) {
+		margin-top: 0;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 90vh;
+	}
+
+	&__gallery {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 90%;
+		max-height: 60%;
+		overflow-x: scroll;
+		object-fit: scale-down;
+		border: 1px solid $border-color;
+		order: 1;
+		margin: 2em;
+		padding: 1em 4em;
+
+		@media (min-width: 992px) {
+			flex-direction: column;
+			width: 18%;
+			max-height: 60%;
+			overflow-y: scroll;
+			order: 0;
+		}
+
+		&-item {
+			padding: 1em;
+			width: 150px;
+			border: 1px solid $border-color;
+			margin: 1em 0;
+			cursor: pointer;
+			margin: 1em;
+		}
+	}
+
+	&__hero-img-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 300px;
+		@media(min-width:576px){
+			min-height: 400px;
+		}
+		@media(min-width:992px){
+			min-height: 500px;
+		}
+	}
+
+
+	&__hero-img {
+		max-width: 300px;
+
+		@media (min-width: 576px) {
+			max-width: 400px;
+		}
+		@media (min-width: 992px) {
+			max-width: 500px;
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		max-width: 30%;
+		order: 2;
+
+		@media (min-width: 992px) {
+			order: 0;
+		}
+
+		&-name {
+			font-size: 3rem;
+			text-align: center;
+		}
+		&-dev {
+			font-size: 1.6rem;
+			margin-bottom: 1em;
+			text-align: center;
+		}
+
+		h3 {
+			font-size: 1.6rem;
+			margin-bottom: 1em;
+		}
+
+		&-info {
+			display: flex;
+			font-size: 1.6rem;
+			font-weight: bold;
+			margin-bottom: 1em;
+			display: inline;
+			text-align: center;
+			@media(min-width:992px){
+				align-self: start;
+			}
+
+			span {
+				margin-left: 0.5em;
+				font-weight: normal;
+		
+			}
+
+			&--color {
+				margin-left: 1em;
+				width: 2rem;
+				height: 2rem;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+		}
+	}
+	&__price {
+		font-size: 4rem;
+		font-weight: bold;
+		color: $main-color;
+	}
+}
