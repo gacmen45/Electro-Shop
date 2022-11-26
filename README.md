@@ -17,11 +17,21 @@
 
 ## Table of Contents
 * [General info](#general-info)
+* [Install](#install)
 * [Technologies](#technologies)
+* [Features](#features)
+* [Sources](#sources)
 * [Live](#live)
 
 ## General Info
 My independent project showing responsive shop-design. Create in React.
+
+## Install
+If you want check this on your local computer please follow this steps:
+* Clone repo,
+* In the project directory, run: `npm i` and  `npm run`
+
+Or If you want only chceck project on website check  [live](#live)
 
 ## Technologies
 Project is created with:
@@ -29,9 +39,25 @@ Project is created with:
 * CSS3, SCSS (BEM-methodology)
 * React
 
+## Features
+
+* Cart with sorting the same type of product
+* Cart icon with sums the number of items in cart
+* Cart Modal when you click on product
+* Product Page which automatically ads products from list (in this case from products array)
+* Product Page with attributes
+* and more
+
+## Sources
+In this project I used:
+
+* Animated Hamburger Icons (https://hamburger-react.netlify.app/)
+* Google Fonts (https://fonts.google.com/knowledge)
+* Font Awesome (https://fontawesome.com/)
+* Images are from diffrent sources
 
 ## Live
-https://gacmen45.github.io/electro-shop/
+https://gacmen45.github.io/game-shop/
 
 </div>
 
