@@ -19,10 +19,13 @@ const SearchBar = () => {
 	}
 
 	const filteredData = PRODUCT_LIST.filter(el => {
+		const findByName = el?.name?.trim().toLowerCase().includes(inputText);
+		const findByPlatform = el?.platform?.trim().toLowerCase().includes(inputText);
+
 		if (inputText === '') {
 			return 
 		} else {
-			return el.name.toLowerCase().includes(inputText) 
+			return findByName || findByPlatform
 		}
 	})
 	
@@ -32,8 +35,6 @@ const SearchBar = () => {
 		setInputText('')
 	}
 
-
-	const test = Object
 	return (
 		<div className={classes['search-bar']}>
 			<div className={isActive ? classes.active : classes['search-bar__input']}>
