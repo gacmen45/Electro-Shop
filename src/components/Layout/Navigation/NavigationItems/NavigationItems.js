@@ -9,6 +9,8 @@ const NavigationItems = props => {
 		props.onChangeCategory(e.currentTarget.dataset.id)
 	}
 
+	
+
 
 	return (<div>
 			<ul className={`${classes.categories}  ${props.mobile ? classes.active : '' }`}>

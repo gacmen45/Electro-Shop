@@ -20,20 +20,23 @@ const SearchBar = () => {
 
 	const filteredData = PRODUCT_LIST.filter(el => {
 		if (inputText === '') {
-			return
+			return 
 		} else {
-			return el.name.toLowerCase().includes(inputText)
+			return el.name.toLowerCase().includes(inputText) 
 		}
 	})
 	const reset = () => {
 		setInputText('')
+		setIsActive(current => !current)
 	}
 
 	const handleClick = () => {
 		setIsActive(current => !current)
-		reset()
+		setInputText('')
 	}
 
+
+	const test = Object
 	return (
 		<div className={classes['search-bar']}>
 			<div className={isActive ? classes.active : classes['search-bar__input']}>
@@ -41,7 +44,7 @@ const SearchBar = () => {
 				<div className={classes.result}>
 					<ul className={classes['result__list']}>
 						{filteredData.map(item => (
-							<li onClick={reset}>
+							<li onClick={handleClick}>
 								<Link to={item.id} style={{ textDecoration: 'none' , color:'black'}}>
 									<div className={classes['result__list-item']}>
 										<img src={item.gallery[0]} alt=''/>
