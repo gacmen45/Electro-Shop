@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart'
 import CartProvider from './store/CartProvider'
 import CartModal from './components/CartModal/CartModal'
 import ProductPage from './components/Layout/ProductPage/ProductPage'
+import Footer from './components/Layout/Footer/Footer'
 
 function App() {
 	const [category, setCategory] = useState('all')
@@ -35,6 +36,7 @@ function App() {
 				<Route path=':id' element={<ProductPage showCartModalHandler={showCartModalHandler} />}></Route>
 				<Route path='cart' element={<Cart />}></Route>
 			</Routes>
+			<Footer/>
 		</CartProvider>
 	)
 }
