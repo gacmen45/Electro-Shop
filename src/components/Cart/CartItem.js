@@ -1,8 +1,8 @@
 import classes from './CartItem.module.scss'
+import { Link } from 'react-router-dom'
 
 const CartItem = props => {
 	const newPrice = props.item.price * props.item.amount
-
 	return (
 		<li className={classes['cart-item']}>
 			<div className={classes['cart-item__box']}>

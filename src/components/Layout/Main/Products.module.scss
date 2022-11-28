@@ -1,9 +1,13 @@
 .container {
 	width: 100%;
-	margin-top: 10rem;
+	margin-top: 12rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 1em;
+
+	@media(min-width:576px){
+		margin-top: 10rem;
+	}
 }

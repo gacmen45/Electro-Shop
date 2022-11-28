@@ -47,3 +47,15 @@
     align-items: center;
     justify-content: center;
 }
+
+
+.aaa{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1em;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background-color: #dddddd;
+}

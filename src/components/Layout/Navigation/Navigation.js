@@ -7,6 +7,7 @@ import classes from './Navigation.module.scss'
 
 import NavigationItems from './NavigationItems/NavigationItems'
 import CartButton from './CartButton/CartButton'
+import SearchBar from './SearchBar/SearchBar'
 
 import Wrapper from '../../UI/Wrapper'
 
@@ -15,10 +16,15 @@ import { Squash as Hamburger } from 'hamburger-react'
 const Navigation = props => {
 	const logo = <FontAwesomeIcon icon={faRobot} style={{ color: 'black' }} size='2x' />
 
-	const [matches, setMatches] = useState(window.matchMedia('(min-width: 992px)').matches)
+	const [matchesLG, setMatchesLG] = useState(window.matchMedia('(min-width: 992px)').matches)
+	const [matchesMD, setMatchesMD] = useState(window.matchMedia('(min-width: 576px)').matches)
+
 
 	useEffect(() => {
-		window.matchMedia('(min-width: 992px)').addEventListener('change', e => setMatches(e.matches))
+		window.matchMedia('(min-width: 992px)').addEventListener('change', e => setMatchesLG(e.matches))
+	}, [])
+	useEffect(() => {
+		window.matchMedia('(min-width: 576px)').addEventListener('change', e => setMatchesMD(e.matches))
 	}, [])
 
 	let navigate = useNavigate()
@@ -46,9 +52,12 @@ const Navigation = props => {
 					<NavigationItems onChangeCategory={changeCategory} mobile={isOpen} />
 				</div>
 				<div className={classes['nav__btn-box']}>
+					{matchesMD &&<SearchBar/>}
 					<CartButton showCartHandler={props.showCartHandler} />
-					{!matches && <Hamburger toggled={isOpen} toggle={setOpen}></Hamburger>}
+					{!matchesLG && <Hamburger toggled={isOpen} toggle={setOpen}></Hamburger>}
+
 				</div>
+				{!matchesMD &&<div className={classes.aaa}><SearchBar/></div>}
 			</nav>
 		</Wrapper>
 	)

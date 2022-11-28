@@ -3,10 +3,14 @@
 .product {
 	display: flex;
 	flex-direction: column;
-	margin-top: 10em;
+	margin-top: 12em;
 	margin-bottom: 5rem;
 	align-items: center;
 	padding: 1em;
+	@media(min-width:576px){
+		margin-top: 10em;
+	}
+	
 
 	@media (min-width: 992px) {
 		margin-top: 0;

@@ -26,7 +26,7 @@ const ProductPage = props => {
 		})
 	}
 
-	const [img,setImg] = useState(product.gallery[0])
+	const [img,setImg] = useState()
 
 	
 const changeImg = e => {
@@ -43,7 +43,7 @@ const changeImg = e => {
 				</div>
 				<div className={classes['product__hero-img-box']}>
 
-				<img className={classes['product__hero-img']} src={img} alt='main-photo' />
+				<img className={classes['product__hero-img']} src={img ||product.gallery[0]} alt='main-photo' />
 				</div>
 				<div className={classes['product__text']}>
 					<h2 className={classes['product__text-name']}>{product.name}</h2>

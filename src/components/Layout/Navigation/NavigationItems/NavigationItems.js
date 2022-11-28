@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-
 import classes from './NavigationItems.module.scss'
+
 
 import CATEGORY_LIST from '../../../../data/CATEGORY_LIST'
 
@@ -21,6 +21,7 @@ const NavigationItems = props => {
 					</Link>
 				))}
 			</ul>
+	
 			</div>
 	)
 }

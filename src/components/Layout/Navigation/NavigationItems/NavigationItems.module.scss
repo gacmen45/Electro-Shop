@@ -38,5 +38,9 @@
 }
 
 .active {
-	top: 80px;
+	top: 130px;
+
+	@media(min-width:576px){
+		top: 80px;
+	}
 }
