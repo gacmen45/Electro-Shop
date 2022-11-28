@@ -25,10 +25,7 @@ const SearchBar = () => {
 			return el.name.toLowerCase().includes(inputText) 
 		}
 	})
-	const reset = () => {
-		setInputText('')
-		setIsActive(current => !current)
-	}
+	
 
 	const handleClick = () => {
 		setIsActive(current => !current)
