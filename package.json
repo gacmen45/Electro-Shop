@@ -2,7 +2,7 @@
 	"name": "electro-shop",
 	"version": "0.1.0",
 	"homepage": "https://gacmen45.github.io/game-shop",
-	"private": false,
+	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.2.1",
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
