@@ -1,9 +1,11 @@
 .cart {
-	margin-top: 10rem;
+	margin-top: 15em;
     
     @media(min-width:576px){
+		margin-top: 10em;
     }
 	h2 {
+		
         margin-left:1em;
 		font-size: 3rem;
 	}

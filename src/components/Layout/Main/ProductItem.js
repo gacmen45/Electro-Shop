@@ -8,7 +8,9 @@ import ProductCartButton from './ProductCartButton'
 
 const ProductItem = props => {
 
-
+const scroll = () => {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 
 	const cartCtx = useContext(CartContext)
@@ -23,7 +25,7 @@ const ProductItem = props => {
 	}
 
 	return (
-				<Link to={`${props.product.id}`} style={{ textDecoration: 'none' }}>
+				<Link onClick={scroll} to={`${props.product.id}`} style={{ textDecoration: 'none' }}>
 		<div className={classes.product}>
 				<h2 className={classes['product__name']}>{props.product.name}</h2>
 
