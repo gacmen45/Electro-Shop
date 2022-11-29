@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom'
 import classes from './NavigationItems.module.scss'
+import { useState } from 'react'
 
 
 import CATEGORY_LIST from '../../../../data/CATEGORY_LIST'
 
 const NavigationItems = props => {
+
+
 	const changeCategoryHandler = e => {
 		props.onChangeCategory(e.currentTarget.dataset.id)
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		props.closeNav(false)
 	}
 
 	

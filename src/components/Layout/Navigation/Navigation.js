@@ -49,7 +49,7 @@ const Navigation = props => {
 						{logo}
 					</div>
 
-					<NavigationItems onChangeCategory={changeCategory} mobile={isOpen} />
+					<NavigationItems onChangeCategory={changeCategory} mobile={isOpen} closeNav={setOpen}  />
 				</div>
 				<div className={classes['nav__btn-box']}>
 					{matchesMD &&<SearchBar/>}

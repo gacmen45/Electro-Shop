@@ -14,7 +14,6 @@ import Footer from './components/Layout/Footer/Footer'
 
 function App() {
 	const [category, setCategory] = useState('all')
-	console.log(category)
 
 	//CART MODAl
 	const [cartModalIsShown, setCartModalIsShown] = useState(false)
