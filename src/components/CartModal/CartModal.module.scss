@@ -1,8 +1,10 @@
+@import './../../assets/styles/_colors';
+
 .cart-modal {
 	&__header {
+		margin: 1em 0;
 		font-size: 1.6rem;
 		text-align: center;
-		margin: 1em 0;
 
 		@media (min-width: 768px) {
 			font-size: 2rem;
@@ -28,17 +30,17 @@
 		align-items: center;
 
 		&-img {
-			width: 100px;
-			object-fit: scale-down;
 			margin-right: 1em;
+			width: 70px;
+			object-fit: scale-down;
 
 			@media(min-width:576px){
-				width: 150px;
 				margin-right: 0;
+				width: 150px;
 			}
 		}
 		&-name {
-			font-size: 1.6rem;
+			font-size: 1.3rem;
 			font-weight: bold;
 
 			@media(min-width:576px){
@@ -50,13 +52,9 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		margin: 2em 4em;
-
-		
+		margin: 1em 4em;
 
 		&-btn {
-			
-			cursor: pointer;
 			margin: 1em;
 			padding: .5em;
 			width: 100px;
@@ -64,9 +62,10 @@
 			text-transform: uppercase;
 			font-weight: bold;
 			border-radius: 8px;
-			border: 1px solid #dddddd;
-			box-shadow: 3px 3px 3px #dddddd;
+			border: 1px solid $border-color;
+			box-shadow: 3px 3px 3px $border-color;
 			transition: all 0.5s;
+			cursor: pointer;
 
 			@media(min-width:576px){
 				padding: 1em 2em;
@@ -74,7 +73,7 @@
 				width: auto;
 			}
 			&:hover {
-				background-color: #0082fa;
+				background-color: $main-color;
 				color: white;
 			}
 		}
