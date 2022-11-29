@@ -1,24 +1,20 @@
-import { Fragment, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRobot } from '@fortawesome/free-solid-svg-icons'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-import classes from './Navigation.module.scss'
+import {logo} from '../../../assets/fontAwesomeIcons'
+import { Squash as Hamburger } from 'hamburger-react'
+import Wrapper from '../../UI/Wrapper'
 
 import NavigationItems from './NavigationItems/NavigationItems'
 import CartButton from './CartButton/CartButton'
 import SearchBar from './SearchBar/SearchBar'
 
-import Wrapper from '../../UI/Wrapper'
-
-import { Squash as Hamburger } from 'hamburger-react'
+import classes from './Navigation.module.scss'
 
 const Navigation = props => {
-	const logo = <FontAwesomeIcon icon={faRobot} style={{ color: 'black' }} size='2x' />
-
+	const [isOpen, setOpen] = useState(false)
 	const [matchesLG, setMatchesLG] = useState(window.matchMedia('(min-width: 992px)').matches)
 	const [matchesMD, setMatchesMD] = useState(window.matchMedia('(min-width: 576px)').matches)
-
 
 	useEffect(() => {
 		window.matchMedia('(min-width: 992px)').addEventListener('change', e => setMatchesLG(e.matches))
@@ -27,37 +23,32 @@ const Navigation = props => {
 		window.matchMedia('(min-width: 576px)').addEventListener('change', e => setMatchesMD(e.matches))
 	}, [])
 
-	let navigate = useNavigate()
-	const routeChange = () => {
-		let path = '/'
-		navigate(path)
-	}
-
-	//ZLOKALIZOWAĆ CO NAZWAŁEM TEST2
 	const changeCategory = target => {
-		props.test2(target)
+		props.changeCategory(target)
 	}
-
-	const [isOpen, setOpen] = useState(false)
 
 	return (
 		<Wrapper>
 			<nav className={classes.nav}>
-				<div className={classes.test}>
-					<div onClick={routeChange} className={classes['nav__logo']}>
-						<h1>GameShop</h1>
-						{logo}
-					</div>
-
-					<NavigationItems onChangeCategory={changeCategory} mobile={isOpen} closeNav={setOpen}  />
+				<div className={classes['nav__box']}>
+					<Link to='/' style={{ textDecoration: 'none' }}>
+						<div className={classes['nav__header']}>
+							{logo}
+							<h1 className={classes['nav__header-heading']}>GameShop</h1>
+						</div>
+					</Link>
+					<NavigationItems onChangeCategory={changeCategory} mobile={isOpen} closeNav={setOpen} />
 				</div>
-				<div className={classes['nav__btn-box']}>
-					{matchesMD &&<SearchBar/>}
+				<div className={classes['nav__box']}>
+					{matchesMD && <SearchBar />}
 					<CartButton showCartHandler={props.showCartHandler} />
 					{!matchesLG && <Hamburger toggled={isOpen} toggle={setOpen}></Hamburger>}
-
 				</div>
-				{!matchesMD &&<div className={classes.aaa}><SearchBar/></div>}
+				{!matchesMD && (
+					<div className={classes['nav__search-bar--mobile']}>
+						<SearchBar />
+					</div>
+				)}
 			</nav>
 		</Wrapper>
 	)

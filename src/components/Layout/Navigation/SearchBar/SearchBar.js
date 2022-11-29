@@ -1,14 +1,12 @@
-import classes from './SearchBar.module.scss'
-import PRODUCT_LIST from '../../../../data/PRODUCT_LIST'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import PRODUCT_LIST from '../../../../data/PRODUCT_LIST'
+import { searchIcon } from '../../../../assets/fontAwesomeIcons'
 
-import { useState } from 'react'
+import classes from './SearchBar.module.scss'
 
 const SearchBar = () => {
-	const searchIcon = <FontAwesomeIcon className={classes['search-btn__icon']} icon={faMagnifyingGlass} />
 
 	const [inputText, setInputText] = useState('')
 	const [isActive, setIsActive] = useState(false)
@@ -23,7 +21,7 @@ const SearchBar = () => {
 		const findByPlatform = el?.platform?.trim().toLowerCase().includes(inputText);
 
 		if (inputText === '') {
-			return 
+			return null
 		} else {
 			return findByName || findByPlatform
 		}
@@ -38,13 +36,13 @@ const SearchBar = () => {
 	return (
 		<div className={classes['search-bar']}>
 			<div className={isActive ? classes.active : classes['search-bar__input']}>
-				<input type='text' value={inputText} onChange={inputHandler} placeholder='Search in shop...' />
+				<input  type='text' value={inputText} onChange={inputHandler} placeholder='Search in shop...' />
 				<div className={classes.result}>
 					<ul className={classes['result__list']}>
-						{filteredData.map(item => (
-							<li onClick={handleClick}>
+						{filteredData.map((item,index) => (
+							<li key={index} onClick={handleClick}>
 								<Link to={item.id} style={{ textDecoration: 'none' , color:'black'}}>
-									<div className={classes['result__list-item']}>
+									<div  className={classes['result__list-item']}>
 										<img src={item.gallery[0]} alt=''/>
 										<p>{item.name}</p>
 									</div>

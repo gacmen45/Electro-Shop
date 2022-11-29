@@ -1,4 +1,4 @@
-@import '../../../styles/_colors';
+@import '../../../assets/styles/_colors';
 
 .product {
 	display: flex;
@@ -81,7 +81,7 @@
 	&__text {
 		display: flex;
 		flex-direction: column;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
 		max-width: 30%;
 		order: 2;

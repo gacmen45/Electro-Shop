@@ -1,14 +1,12 @@
 import { useContext } from 'react'
-import classes from './CartButton.module.scss'
 import CartContext from '../../../../store/cart-context'
-
 import { useNavigate } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import {cartIcon} from '../../../../assets/fontAwesomeIcons'
+
+import classes from './CartButton.module.scss'
 
 const CartButton = props => {
-	const cartIcon = <FontAwesomeIcon className={classes['cart-btn__icon']} icon={faCartShopping}/>
 
 	let navigate = useNavigate()
 	const routeChange = () => {

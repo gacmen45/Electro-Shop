@@ -1,61 +1,48 @@
-.nav{
-    display:flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1em;
-    align-items: center;
-    background-color: #dddddd;
-    font-size: 1.4rem;
-    z-index: 10000;
+@import '../../../assets/styles/_colors';
 
-@media(min-width: 576px){
-    font-size: 1.4rem;
-}
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1em;
+	width: 100%;
+	font-size: 1.2rem;
+	background-color: $secondary-color;
+	z-index: 10000;
 
-    @media(min-width: 992px){
+	@media (min-width: 576px) {
         justify-content: space-around;
-        align-items: center;
-    }
+		font-size: 1.4rem;
+	}
+	&__header {
+		display: flex;
+		padding: 1em;
+		cursor: pointer;
 
-    &__logo{
+		&-heading {
+			margin-left: 0.2em;
+			color: $main-color;
+		}
+	}
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	
+	}
+    &__search-bar--mobile {
         display: flex;
-        flex-direction: column;
-        padding: 1em;
-        cursor: pointer;
-        z-index: 1;
-        
-
-
-        h1{
-            color: #0082fa;
-
-        }
-    }
-    &__btn-box{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1em;
+        position: absolute;
+        top: 51px;
+        right: 0;
+        width: 100%;
+        background-color: $secondary-color;
     }
 }
 
 
-.test{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.aaa{
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 1em;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    background-color: #dddddd;
-}

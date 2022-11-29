@@ -26,7 +26,7 @@ function App() {
 
 	return (
 		<CartProvider>
-			<Navigation test2={setCategory} />
+			<Navigation changeCategory={setCategory} />
 			{cartModalIsShown && <CartModal hideCartModalHandler={hideCartModalHandler} />}
 			<Routes>
 				<Route
