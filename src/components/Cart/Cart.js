@@ -1,8 +1,10 @@
 import { useContext } from 'react'
-import classes from './Cart.module.scss'
 import CartContext from '../../store/cart-context'
+
 import CartItem from './CartItem'
+
 import Wrapper from './../UI/Wrapper'
+import classes from './Cart.module.scss'
 
 const Cart = props => {
 	const cartCtx = useContext(CartContext)
