@@ -1,7 +1,9 @@
 import PRODUCT_LIST from '../../../data/PRODUCT_LIST'
-import classes from './Products.module.scss'
-import ProductItem from './ProductItem'
 import Wrapper from '../../UI/Wrapper'
+
+import ProductItem from './ProductItem'
+
+import classes from './Products.module.scss'
 
 const Products = props => {
 	const filteredProducts = PRODUCT_LIST.filter(product => {

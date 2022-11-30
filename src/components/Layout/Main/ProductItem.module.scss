@@ -1,3 +1,5 @@
+@import './../../../assets/styles/_colors';
+
 .product {
 	position: relative;
 	display: flex;
@@ -12,15 +14,15 @@
 	transition: all 0.5s;
 
 	&:hover {
-		border: 1px solid #dddddd;
-		box-shadow: 3px 3px 3px #dddddd;
+		border: 1px solid $border-color;
+		box-shadow: 3px 3px 3px $border-color;
 	}
     &:hover .product__price-btn {
         opacity: 1;
     }
 
 	&__name {
-		color: black;
+		color: $main-font-color;
 		padding: 1em;
 		font-size: 2rem;
 	}
@@ -31,7 +33,7 @@
 		padding: 1em;
 	}
 	&__text {
-		color: black;
+		color: $main-font-color;
 		font-size: 1.8rem;
 		padding: 0.5em;
 	}
@@ -44,12 +46,12 @@
 			font-weight: bold;
 			font-size: 2rem;
 			margin-right: 5em;
-			color: black;
+			color: $main-font-color;
 		}
 		&-btn {
 			opacity: 0;
 			transition: opacity 0.5s;
-			color: #0082fa;
+			color: $main-color;
 		}
 	}
 }

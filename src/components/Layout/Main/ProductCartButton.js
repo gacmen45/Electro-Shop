@@ -1,10 +1,8 @@
+import { cartIconHandler } from '../../../assets/fontAwesomeIcons'
+
 import classes from './ProductCartButton.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const ProductItemActions = (props) => {
-	const cartIcon = <FontAwesomeIcon className={classes['cart-btn__icon']} icon={faCartShopping}/>
-
 
 	const submitHandler = (event) => {
 	  event.preventDefault();
@@ -20,10 +18,7 @@ const ProductItemActions = (props) => {
 		props.showCartModalHandler()
 	}
 
-	
-	
-
-	return <div onClick={onClick} className={classes['cart-btn']}>{cartIcon}</div>
+	return <div onClick={onClick} className={classes['cart-btn']}>{cartIconHandler}</div>
 	
 ;
 }

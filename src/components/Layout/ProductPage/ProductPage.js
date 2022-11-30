@@ -1,16 +1,15 @@
 import { useContext,useState } from 'react'
+import CartContext from '../../../store/cart-context'
+import { useParams } from 'react-router-dom'
 
 import PRODUCT_LIST from '../../../data/PRODUCT_LIST'
-import { useParams } from 'react-router-dom'
-import CartContext from '../../../store/cart-context'
-import ProductItemActions from '../Main/ProductCartButton'
-import classes from './ProductPage.module.scss'
 import Wrapper from '../../UI/Wrapper'
+
 import ProductPageButton from './ProductPageButton'
 
+import classes from './ProductPage.module.scss'
+
 const ProductPage = props => {
-
-
 
 	const { id } = useParams()
 	const product = PRODUCT_LIST.find(product => product.id === id)
@@ -38,12 +37,12 @@ const changeImg = e => {
 			<div className={classes.product}>
 				<div className={classes['product__gallery']}>
 					{product.gallery.map(item => (
-						<img onClick={changeImg} className={classes['product__gallery-item']} src={item} alt='product screens' />
+						<img onClick={changeImg} className={classes['product__gallery-item']} src={item} alt={product.name} />
 					))}
 				</div>
 				<div className={classes['product__hero-img-box']}>
 
-				<img className={classes['product__hero-img']} src={img ||product.gallery[0]} alt='main-photo' />
+				<img className={classes['product__hero-img']} src={img ||product.gallery[0]} alt={product.name} />
 				</div>
 				<div className={classes['product__text']}>
 					<h2 className={classes['product__text-name']}>{product.name}</h2>
