@@ -57,7 +57,7 @@ In this project I used:
 * Images are from diffrent sources
 
 ## Live
-https://gacmen45.github.io/game-shop/
+https://marekgacek45.github.io/game-shop/
 
 </div>
 
